@@ -1,13 +1,3 @@
-# keras-unet
-U-Net implementation using Keras-1.0 functional API, that works with tensorflow backend and 'tf' image dim ordering.
-
-### The original articles
-* [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)
-
-## Examples 
-
-### Train images
-```
 import numpy as np
 from sklearn.model_selection import train_test_split
 import cv2
@@ -43,5 +33,4 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 model = UNet(input_shape=(IMG_WIDTH, IMG_HEIGHT, 3))
 model.compile(optimizer=Adam(lr=1e-5), loss=dice_coef_loss, metrics=[dice_coef])
 model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=100)
-```
 
